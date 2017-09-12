@@ -1,10 +1,10 @@
 ## Machine Learning
 
-#### Qué es?
+### Qué es?
 Machine learning (ML) es una rama dentro de ciencias de la computación en la que se estudia, o se busca desarrollar, sistemas que puedan aprender automáticamente. Es decir, a partir de un conjunto de datos poder aprender de los mismos para de esta manera, al encontrarse con un nuevo conjunto de datos poder aplicar lo aprendido con el conjunto anterior.
 Esto tambien implica que estos sistemas se mejoren de forma autónoma con el tiempo, sin intervención humana. 
 
-#### Cuales son sus aplicaciones?
+### Cuales son sus aplicaciones?
 Muchas actividades actualmente ya se están aprovechando del Machine Learning. Es que practicamente en toda actividad que se trabaje con datos se puede aplicar ML. Un claro ejemplo actual es es el empleo de algoritmos de machine learning en paginas de compras por internet (como Amazon por ejemplo) con los cuales se puede, a partir de los datos recabados del comportamiento del usuario, recomendarle al mismo ofertas personalizadas a sus gustos, rango de edad, clase social, etc. Todo esto, únicamente aprendiendo de los datos y construyendo información a partir de los mismos.
 
 El campo de aplicación práctica depende de la imaginación y de los datos que estén disponibles. Como mencionamos, si se tienen datos, se puede aplicar. Algunos ejemplos de aplicaciones:
