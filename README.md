@@ -18,8 +18,8 @@ El campo de aplicación práctica depende de la imaginación y de los datos que 
 
 ### Por qué es importante?
 El mundo en el que vivimos esta cada vez más conectado, a tal punto que la mayoria de las cosas que hacemos, vemos o decimos estan en internet, cada vez que hacemos algo online vamos generando datos. Es tal la cantidad de datos y el potencial tecnologico que tenemos que estaríamos yendo a contracorriente si no los empleamos en nuestro favor.
-Como vimos las aplicaciones que tiene son inimaginables, prácticamente podemos aplicarlo a todo. No solo con la motivación de sacar provecho personal de este, sino como forma de aportar nuestro granito a algo mas grande que nosotros. Imaginen poder predecir las enfermedades y tratarlas antes si quiera que el paciente las padezca. O la cantidad de vidas y la reduccion de daños que se puede lograr prediciendo con mayor exactitud las catastrofes naturales.
-Tenemos en nuestras manos una herramienta mu poderosa, con las cuales podemos realizar cosas realmente increibles y podemos dejar nuestra marca en el mundo.
+Como vimos las aplicaciones que tiene son inimaginables, prácticamente podemos aplicarlo a todo. No sólo con la motivación de sacar provecho personal de este, sino como forma de aportar a algo más grande que nosotros. Imaginen poder predecir las enfermedades y tratarlas antes si quiera que el paciente las padezca. O la cantidad de vidas y la reduccion de daños que se puede lograr prediciendo con mayor exactitud las catástrofes naturales.
+Tenemos en nuestras manos una herramienta muy poderosa, con la cual podemos realizar cosas realmente increibles y podemos dejar nuestra marca en el mundo.
 
 ### Cuál es el motivo de este repositorio?
 Lo que queremos lograr con esto es poder demostrar los conocimientos que vamos adquiriendo a medida que nos adentramos más en lo que es el mundo de ML y que a su vez sirva para compartir estos conocimientos que generamos con más personas y que pueda oficiar como una especie de porfolio por si en un futuro quieren trabajar con nosotros.
