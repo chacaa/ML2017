@@ -25,3 +25,6 @@ El mundo en el que vivimos esta cada vez más conectado, a tal punto que la mayo
 ### Cuál es el motivo de este repositorio?
 
 Lo que queremos lograr con esto es poder demostrar los conocimientos que vamos adquiriendo a medida que nos adentramos más en lo que es el mundo de ML y que a su vez sirva para compartir estos conocimientos que generamos con más personas y que pueda oficiar como una especie de porfolio por si en un futuro quieren trabajar con nosotros.
+
+### Casos de estudio
+* [[Caso de estudio] Enfermedades Cardiacas](https://github.com/chacaa/ML2017/tree/master/Caso%20de%20Estudio%20-%20Enfermedades%20cardiacas)
