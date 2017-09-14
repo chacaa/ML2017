@@ -17,7 +17,8 @@ El campo de aplicación práctica depende de la imaginación y de los datos que 
 * Hacer prediagnósticos médicos basados en síntomas del paciente.
 * Poder saber como se encuentra socialmente una empresa o un producto a partir de comentarios en redes sociales.
 * Para aumentar el rendimiento en campañas politicas.
-* Por qué es importante?
+
+### Por qué es importante?
 
 El mundo en el que vivimos esta cada vez más conectado, a tal punto que la mayoria de las cosas que hacemos, vemos o decimos estan en internet, cada vez que hacemos algo online vamos generando datos. Es tal la cantidad de datos y el potencial tecnologico que tenemos que estaríamos yendo a contracorriente si no los empleamos en nuestro favor. Como vimos las aplicaciones que tiene son inimaginables, prácticamente podemos aplicarlo a todo. No sólo con la motivación de sacar provecho personal de este, sino como forma de aportar a algo más grande que nosotros. Imaginen poder predecir las enfermedades y tratarlas antes si quiera que el paciente las padezca. O la cantidad de vidas y la reduccion de daños que se puede lograr prediciendo con mayor exactitud las catástrofes naturales. Tenemos en nuestras manos una herramienta muy poderosa, con la cual podemos realizar cosas realmente increibles y podemos dejar nuestra marca en el mundo.
 
