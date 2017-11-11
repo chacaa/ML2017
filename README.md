@@ -10,6 +10,5 @@ Este repositorio contiene todos los trabajos realizados en el curso Machine Lear
 
 ### Antes de empezar
 Se asume que la persona entiende del tema y sabe que es Machine Learning, de ser el caso que no se sepa pasar por el archivo de Introducción.
-Para los trabajos realizados se utiliza la herramienta RapidMiner y planillas de cálculo en Excel.
-[RapidMiner](https://docs.rapidminer.com).
+Para los trabajos realizados se utiliza la herramienta [RapidMiner](https://docs.rapidminer.com) y planillas de cálculo en Excel.
 
