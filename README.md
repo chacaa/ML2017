@@ -9,6 +9,7 @@ Este repositorio contiene todos los trabajos realizados en el curso Machine Lear
 * Gianni Iaquinta
 
 ### Antes de empezar
-Se asume que la persona entiende del tema y sabe que es Machine Learning, de ser el caso que no se sepa pasar por el archivo de Introducción.
+Se asume que la persona sabe y entiende que es Machine Learning. 
+En caso de que no sepa o no entienda recomendamos que se lea el archivo de Introducción a Machine Learning.
 Para los trabajos realizados se utiliza la herramienta [RapidMiner](https://docs.rapidminer.com) y planillas de cálculo en Excel.
 
