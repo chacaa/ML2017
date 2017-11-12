@@ -1,0 +1,19 @@
+Tipos de Estandarización / Normalización disponibles en Rapid Miner:
+====================================================================
+
+_ z-transformation
+_ range transformtion
+_ proportion transformation
+_ interquartil range
+
+Utilizamos el z-transformation para estandarizar, y range-transformation para normalizar entre 0 y 1, asumiendo de que la distribución de los datos
+es continua y Gaussiana.
+
+Resultados donde aplicamos la estandareización / normalización a todos los atributos:
+
+_ crudo			71,15%
+_ z-transformation	  100%
+_ range transformtion	94,23%
+
+
+No tiene datos faltantes.
