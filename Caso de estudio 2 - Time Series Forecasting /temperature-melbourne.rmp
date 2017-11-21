@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="7.4.000">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="7.4.000" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="7.4.000" expanded="true" height="68" name="Retrieve temperature_melbourne" width="90" x="45" y="85">
+        <parameter key="repository_entry" value="//Local Repository/temperature_melbourne"/>
+      </operator>
+      <operator activated="true" class="series:windowing" compatibility="7.4.000" expanded="true" height="82" name="Windowing" width="90" x="179" y="85">
+        <parameter key="series_representation" value="encode_series_by_examples"/>
+        <parameter key="window_size" value="30"/>
+        <parameter key="step_size" value="1"/>
+        <parameter key="create_single_attributes" value="true"/>
+        <parameter key="create_label" value="true"/>
+        <parameter key="select_label_by_dimension" value="false"/>
+        <parameter key="label_attribute" value="Daily minimum temperatures"/>
+        <parameter key="horizon" value="1"/>
+        <parameter key="add_incomplete_windows" value="false"/>
+        <parameter key="stop_on_too_small_dataset" value="true"/>
+      </operator>
+      <operator activated="false" class="generate_attributes" compatibility="7.4.000" expanded="true" height="82" name="Generate Attributes" width="90" x="313" y="340">
+        <list key="function_descriptions">
+          <parameter key="quarter" value="if (date_get(Date, DATE_UNIT_MONTH) == 0 || date_get(Date, DATE_UNIT_MONTH) == 1 || date_get(Date, DATE_UNIT_MONTH) == 2, 1,&#10;&#9;if (date_get(Date, DATE_UNIT_MONTH) == 3 || date_get(Date, DATE_UNIT_MONTH) == 4 || date_get(Date, DATE_UNIT_MONTH) == 5, 2,&#10;&#9;&#9;if (date_get(Date, DATE_UNIT_MONTH) == 6 || date_get(Date, DATE_UNIT_MONTH) == 7 || date_get(Date, DATE_UNIT_MONTH) == 8, 3, 4)&#10;&#9;)&#10;)"/>
+        </list>
+        <parameter key="keep_all" value="true"/>
+      </operator>
+      <operator activated="false" class="concurrency:cross_validation" compatibility="7.4.000" expanded="true" height="145" name="Cross Validation" width="90" x="112" y="238">
+        <parameter key="split_on_batch_attribute" value="false"/>
+        <parameter key="leave_one_out" value="false"/>
+        <parameter key="number_of_folds" value="10"/>
+        <parameter key="sampling_type" value="automatic"/>
+        <parameter key="use_local_random_seed" value="false"/>
+        <parameter key="local_random_seed" value="1992"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="linear_regression" compatibility="7.4.000" expanded="true" height="103" name="Linear Regression" width="90" x="112" y="34">
+            <parameter key="feature_selection" value="M5 prime"/>
+            <parameter key="alpha" value="0.05"/>
+            <parameter key="max_iterations" value="10"/>
+            <parameter key="forward_alpha" value="0.05"/>
+            <parameter key="backward_alpha" value="0.05"/>
+            <parameter key="eliminate_colinear_features" value="true"/>
+            <parameter key="min_tolerance" value="0.05"/>
+            <parameter key="use_bias" value="true"/>
+            <parameter key="ridge" value="1.0E-8"/>
+          </operator>
+          <connect from_port="training set" to_op="Linear Regression" to_port="training set"/>
+          <connect from_op="Linear Regression" from_port="model" to_port="model"/>
+          <portSpacing port="source_training set" spacing="0"/>
+          <portSpacing port="sink_model" spacing="0"/>
+          <portSpacing port="sink_through 1" spacing="0"/>
+        </process>
+        <process expanded="true">
+          <operator activated="true" class="apply_model" compatibility="7.4.000" expanded="true" height="82" name="Apply Model" width="90" x="112" y="34">
+            <list key="application_parameters"/>
+            <parameter key="create_view" value="false"/>
+          </operator>
+          <operator activated="true" class="performance_regression" compatibility="7.4.000" expanded="true" height="82" name="Performance" width="90" x="246" y="34">
+            <parameter key="main_criterion" value="first"/>
+            <parameter key="root_mean_squared_error" value="true"/>
+            <parameter key="absolute_error" value="false"/>
+            <parameter key="relative_error" value="false"/>
+            <parameter key="relative_error_lenient" value="false"/>
+            <parameter key="relative_error_strict" value="false"/>
+            <parameter key="normalized_absolute_error" value="false"/>
+            <parameter key="root_relative_squared_error" value="false"/>
+            <parameter key="squared_error" value="false"/>
+            <parameter key="correlation" value="false"/>
+            <parameter key="squared_correlation" value="false"/>
+            <parameter key="prediction_average" value="false"/>
+            <parameter key="spearman_rho" value="false"/>
+            <parameter key="kendall_tau" value="false"/>
+            <parameter key="skip_undefined_labels" value="true"/>
+            <parameter key="use_example_weights" value="true"/>
+          </operator>
+          <connect from_port="model" to_op="Apply Model" to_port="model"/>
+          <connect from_port="test set" to_op="Apply Model" to_port="unlabelled data"/>
+          <connect from_op="Apply Model" from_port="labelled data" to_op="Performance" to_port="labelled data"/>
+          <connect from_op="Performance" from_port="performance" to_port="performance 1"/>
+          <portSpacing port="source_model" spacing="0"/>
+          <portSpacing port="source_test set" spacing="0"/>
+          <portSpacing port="source_through 1" spacing="0"/>
+          <portSpacing port="sink_test set results" spacing="0"/>
+          <portSpacing port="sink_performance 1" spacing="0"/>
+          <portSpacing port="sink_performance 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="series:windowing" compatibility="7.4.000" expanded="true" height="82" name="Windowing (2)" width="90" x="313" y="187">
+        <parameter key="series_representation" value="encode_series_by_examples"/>
+        <parameter key="window_size" value="30"/>
+        <parameter key="step_size" value="1"/>
+        <parameter key="create_single_attributes" value="true"/>
+        <parameter key="create_label" value="true"/>
+        <parameter key="select_label_by_dimension" value="false"/>
+        <parameter key="label_attribute" value="Daily minimum temperatures"/>
+        <parameter key="horizon" value="1"/>
+        <parameter key="add_incomplete_windows" value="false"/>
+        <parameter key="stop_on_too_small_dataset" value="true"/>
+      </operator>
+      <operator activated="true" class="remember" compatibility="7.4.000" expanded="true" height="68" name="Remember" width="90" x="514" y="187">
+        <parameter key="name" value="pruebaaaaa"/>
+        <parameter key="io_object" value="ExampleSet"/>
+        <parameter key="store_which" value="1"/>
+        <parameter key="remove_from_process" value="true"/>
+      </operator>
+      <operator activated="true" class="linear_regression" compatibility="7.4.000" expanded="true" height="103" name="Linear Regression (2)" width="90" x="313" y="34">
+        <parameter key="feature_selection" value="M5 prime"/>
+        <parameter key="alpha" value="0.05"/>
+        <parameter key="max_iterations" value="10"/>
+        <parameter key="forward_alpha" value="0.05"/>
+        <parameter key="backward_alpha" value="0.05"/>
+        <parameter key="eliminate_colinear_features" value="true"/>
+        <parameter key="min_tolerance" value="0.05"/>
+        <parameter key="use_bias" value="true"/>
+        <parameter key="ridge" value="1.0E-8"/>
+      </operator>
+      <operator activated="true" class="concurrency:loop" compatibility="7.4.000" expanded="true" height="82" name="Loop" width="90" x="514" y="34">
+        <parameter key="number_of_iterations" value="5"/>
+        <parameter key="iteration_macro" value="iteration"/>
+        <parameter key="reuse_results" value="false"/>
+        <parameter key="enable_parallel_execution" value="true"/>
+        <process expanded="true">
+          <operator activated="true" class="recall" compatibility="7.4.000" expanded="true" height="68" name="Recall" width="90" x="45" y="136">
+            <parameter key="name" value="pruebaaaaa"/>
+            <parameter key="io_object" value="ExampleSet"/>
+            <parameter key="remove_from_store" value="false"/>
+          </operator>
+          <operator activated="true" class="apply_model" compatibility="7.4.000" expanded="true" height="82" name="Apply Model (2)" width="90" x="112" y="34">
+            <list key="application_parameters"/>
+            <parameter key="create_view" value="false"/>
+          </operator>
+          <operator activated="true" class="multiply" compatibility="7.4.000" expanded="true" height="103" name="Multiply" width="90" x="246" y="34"/>
+          <operator activated="true" class="materialize_data" compatibility="7.4.000" expanded="true" height="82" name="Materialize Data" width="90" x="246" y="187">
+            <parameter key="datamanagement" value="double_array"/>
+            <parameter key="data_management" value="auto"/>
+          </operator>
+          <operator activated="true" class="adjust_date" compatibility="7.4.000" expanded="true" height="82" name="Adjust Date" width="90" x="380" y="187">
+            <parameter key="attribute_name" value="date"/>
+            <list key="adjustments">
+              <parameter key="1" value="Day"/>
+            </list>
+            <parameter key="keep_old_attribute" value="false"/>
+          </operator>
+          <operator activated="true" class="set_role" compatibility="7.4.000" expanded="true" height="82" name="Set Role" width="90" x="514" y="187">
+            <parameter key="attribute_name" value=""/>
+            <parameter key="target_role" value="label"/>
+            <list key="set_additional_roles"/>
+          </operator>
+          <operator activated="true" class="remember" compatibility="7.4.000" expanded="true" height="68" name="Remember (2)" width="90" x="648" y="289">
+            <parameter key="io_object" value="ExampleSet"/>
+            <parameter key="store_which" value="1"/>
+            <parameter key="remove_from_process" value="true"/>
+          </operator>
+          <connect from_port="input 1" to_op="Apply Model (2)" to_port="model"/>
+          <connect from_op="Recall" from_port="result" to_op="Apply Model (2)" to_port="unlabelled data"/>
+          <connect from_op="Apply Model (2)" from_port="labelled data" to_op="Multiply" to_port="input"/>
+          <connect from_op="Multiply" from_port="output 1" to_port="output 1"/>
+          <connect from_op="Multiply" from_port="output 2" to_op="Materialize Data" to_port="example set input"/>
+          <connect from_op="Materialize Data" from_port="example set output" to_op="Adjust Date" to_port="example set input"/>
+          <connect from_op="Adjust Date" from_port="example set output" to_op="Set Role" to_port="example set input"/>
+          <connect from_op="Set Role" from_port="example set output" to_op="Remember (2)" to_port="store"/>
+          <portSpacing port="source_input 1" spacing="0"/>
+          <portSpacing port="source_input 2" spacing="0"/>
+          <portSpacing port="sink_output 1" spacing="0"/>
+          <portSpacing port="sink_output 2" spacing="0"/>
+        </process>
+      </operator>
+      <operator activated="true" class="append" compatibility="7.4.000" expanded="true" height="82" name="Append" width="90" x="648" y="34">
+        <parameter key="datamanagement" value="double_array"/>
+        <parameter key="data_management" value="auto"/>
+        <parameter key="merge_type" value="all"/>
+      </operator>
+      <connect from_op="Retrieve temperature_melbourne" from_port="output" to_op="Windowing" to_port="example set input"/>
+      <connect from_op="Windowing" from_port="example set output" to_op="Linear Regression (2)" to_port="training set"/>
+      <connect from_op="Windowing" from_port="original" to_op="Windowing (2)" to_port="example set input"/>
+      <connect from_op="Windowing (2)" from_port="example set output" to_op="Remember" to_port="store"/>
+      <connect from_op="Linear Regression (2)" from_port="model" to_op="Loop" to_port="input 1"/>
+      <connect from_op="Loop" from_port="output 1" to_op="Append" to_port="example set 1"/>
+      <connect from_op="Append" from_port="merged set" to_port="result 1"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+    </process>
+  </operator>
+</process>
