@@ -2,10 +2,10 @@
 
 ### Propósito del portafolio
 Este repositorio contiene todos los trabajos realizados en el curso Machine Learning de la Universidad Católica del Uruguay en el segundo semestre del año 2017. Los trabajos realizados son presentados por la catedra del curso y desarrollados por los alumnos de la Universidad:
-* Santiago Casas
+* Santiago Casás
 * Mauricio Coniglio
-* Agustín Betancor
-* Martín Rose
+* Agustín Betancor
+* Martín Rose
 * Gianni Iaquinta
 
 ### Antes de empezar
