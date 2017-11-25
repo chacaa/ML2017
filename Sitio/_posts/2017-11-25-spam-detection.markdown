@@ -27,4 +27,14 @@ El dataset contiene 5.574 observaciones y no presenta valores faltantes. El mism
 * **result**: Corresponde al resultado de la observación, el mismo puede tomar los valores “ham” para el caso cuando el SMS es legítimo, mientras que toma el valor “spam” cuando el SMS es realmente SPAM. El atributo es binomial.
 * **message**: Este atributo contiene el contenido del SMS, el cual es un mensaje en idioma inglés. Este atributo es polynomial.
 
+### Técnica de validación del modelo
+La técnica utilizada en este caso de estudio fue [Cross Validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)).
 
+### Herramientas utilizadas
+En este caso de estudio se trabajo con la herramientas [RapidMiner](https://docs.rapidminer.com) y [RapidMiner Server](https://docs.rapidminer.com/server).
+
+### Solución
+* Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf).
+* Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas).
+
+### Conclusión
