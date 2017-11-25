@@ -12,7 +12,7 @@ author: Mauricio Coniglio
 author-image: http://img.sparknotes.com/content/sparklife/sparktalk/nov2016litchardeathquiz1_MediumWide.jpg
 author-bio: I ♥ Machine Learning.
 ---
-Lo que buscamos con este porfolio es poder demostrar los conocimientos adquiridos durante el segundo semestre de 2017, en el cual cursamos la asignatura *Introducción a los métodos de aprendizaje automático* en el marco de las materias optativas de la [Universidad Católica del Uruguay](http://ucu.edu.uy/es). En este van a encontrar el proceso completo desde el análisis y preparación de los datos, hasta la generación de un modelo y su posterior utilización en una aplicacion real.
+Lo que buscamos con este porfolio es poder demostrar los conocimientos adquiridos durante el segundo semestre de 2017, en el cual cursamos la asignatura *Introducción a los métodos de aprendizaje automático* en el marco de las materias optativas de la [Universidad Católica del Uruguay](http://ucu.edu.uy/es). En este van a encontrar soluciones propuestas a distintos problemas. En ellas podrán ver un proceso completo que va desde el análisis y preparación de los datos, hasta la generación de un modelo y su posterior utilización en una aplicación real.
 
 ### Acerca del repositorio
 Desde el sitio van a tener acceso al repositorio público del grupo en el cual se encuentran los trabajos realizados por el equipo.
