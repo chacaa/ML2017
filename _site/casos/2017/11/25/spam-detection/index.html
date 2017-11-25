@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Detección de SPAM &#8211; ML2017</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Porfolio de machine learning">
+    <meta name="author" content="John Doe">
+    <meta name="keywords" content="casos">
+    <link rel="canonical" href="http://localhost:4000/ML2017/casos/2017/11/25/spam-detection/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed for ML2017" href="/ML2017/feed.xml" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/ML2017/css/pixyll.css?201711251722" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- MathJax -->
+    
+
+    <!-- Verifications -->
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Detección de SPAM">
+    <meta property="og:description" content="Hoy en dia es muy común que las empresas comuniquen sus promociones a través de mensajes de texto, esto genera malestar dado que muchas veces las ofertas/promociones que llegan no son del agrado o no interesan al usuario y para empeorar la situacion aun mas, llegan con mucha frecuencia.">
+    <meta property="og:url" content="http://localhost:4000/casos/2017/11/25/spam-detection/">
+    <meta property="og:site_name" content="ML2017">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    
+    <meta name="twitter:title" content="Detección de SPAM" />
+    <meta name="twitter:description" content="Porfolio de machine learning" />
+    <meta name="twitter:url" content="http://localhost:4000/casos/2017/11/25/spam-detection/" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/accordion.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/button.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/transition.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/list.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/sidebar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/dimmer.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/list.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/image.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/menu.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/divider.min.css">
+
+    
+
+    
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<body class="site">
+    
+    <div class="scroll-title">
+         <p>Currently Reading:</p>
+        <h2>Detección de SPAM</h2>
+        <div class="post-meta">Nov 25, 2017</div>
+         
+         <span class="post-meta small">
+  
+    2 minute read
+  
+  </span>
+          <section style="margin-top: 100px;">
+        
+            <a class="ui mini inverted button" href="/ML2017/casos/2017/11/21/melbourn-temperature/"><i class="left arrow icon"></i>Previous Post</a>  
+        </section>
+    </div>
+    <div class="ui right sidebar vertical menu">
+    <div class="sidebar-container">
+        <a class="green item" href="/ML2017/">
+            <i class="home icon"></i>Inicio
+        </a>
+        <a class="item" href="https://github.com/chacaa/ML2017">
+            <i class="github icon"></i>Repositorio
+        </a>
+      
+        <div class="ui horizontal divider">
+            <h6>Post más recientes</h6></div>
+        <div class="ui list">
+            
+            <div class="item">
+                <div class="content">
+                    <h6><a href="/ML2017/casos/2017/11/25/spam-detection/">Detección de SPAM</a></h6>
+                    <div class="description">Nov 25, 2017</div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="content">
+                    <h6><a href="/ML2017/casos/2017/11/21/melbourn-temperature/">Temperatura mínima en Melbourne</a></h6>
+                    <div class="description">Nov 21, 2017</div>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="content">
+                    <h6><a href="/ML2017/casos/2017/09/15/cardiac/">Enfermedades cardíacas</a></h6>
+                    <div class="description">Sep 15, 2017</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <div class="pusher" id="dimmer">
+        <div class="flex-wrap">
+            
+            <div class="left-sidebar" style="background-image: url(http://www.yomzansi.com/wp-content/uploads/2015/11/avoid-spam-sms-yomzansi.jpg); background-size:cover; background-position:center;">
+                <div class="overlay">
+                    
+                        </div>
+                    </div>
+                    <div class="site-wrap">
+                        <div class="post p2 p-responsive wrap" role="main">
+                            <span class="burgWrapper" href="##" style="cursor:pointer;">
+                    <div class="burg"></div>
+                </span>
+                            <div class="measure">
+                                 
+<div class="post-header mb2">
+    <h1>Detección de SPAM</h1>
+    <span class="post-meta">Nov 25, 2017</span>
+    <br> 
+    <span class="post-meta small">
+  
+    1 minute read
+  
+  </span>
+</div>
+<article class="post-content">
+    <p>Hoy en dia es muy común que las empresas comuniquen sus promociones a través de mensajes de texto, esto genera malestar dado que muchas veces las ofertas/promociones que llegan no son del agrado o no interesan al usuario y para empeorar la situacion aun mas, llegan con mucha frecuencia.
+A raíz de este problema es que nos resultó interesante investigar acerca de esto y poder encontrar una manera  de determinar de forma automática cuales mensajes corresponden a spam y cuáles no. Esto podría ser de gran ayuda si luego se quisiera automatizar la eliminación de los mismos o crear un aplicación que bloquee este tipo de mensajes.
+Es por esta razón que se busco un dataset el cual nos permitiera realizar dicha investigación.
+Lo que se busca con este caso de estudio es poder crear un modelo que permita predecir si un mensaje es SPAM o no.</p>
+
+<h3 id="análisis-del-problema">Análisis del problema</h3>
+<p>El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
+Claramente el caso de estudio plantea un problema de clasificación dado que se busca clasificar el SMS en alguna de las clases de salida. En este caso al solo poder tomar dos valores, SPAM o NO SPAM, y al ser un problema de clasificación podemos hilar más profundo y ver que nos encontramos frente a un claro problema de clasificación binaria.</p>
+
+<h3 id="análisis-de-los-datos">Análisis de los datos</h3>
+<p>El dataset utilizado fue obtenido se llama “SMS Spam Collection”, el mismo se puede encontrar entre los dataset ofrecidos por Kaggle a través de la siguiente <a href="https://www.kaggle.com/uciml/sms-spam-collection-dataset">URL</a>.
+El dataset contiene 5.574 observaciones y no presenta valores faltantes. El mismo está compuesto por dos atributos:</p>
+<ul>
+  <li><strong>result</strong>: Corresponde al resultado de la observación, el mismo puede tomar los valores “ham” para el caso cuando el SMS es legítimo, mientras que toma el valor “spam” cuando el SMS es realmente SPAM. El atributo es binomial.</li>
+  <li><strong>message</strong>: Este atributo contiene el contenido del SMS, el cual es un mensaje en idioma inglés. Este atributo es polynomial.</li>
+</ul>
+
+
+</article>
+<section class="section align-center" style="border-top: 1px solid #ccc; margin-top: 6%;">
+    <div class="ui tiny basic buttons">
+        
+        <a class="ui labeled icon button" href="/ML2017/casos/2017/11/21/melbourn-temperature/"><i class="left arrow icon"></i>Previous Post</a>  
+    </div>
+</section>
+    
+<script type="text/javascript">
+$(document).ready(function() {
+    // Hide Header on on scroll down
+    if ($(window).width() >= 841) {
+        var didScroll;
+        var lastScrollTop = 0;
+        var delta = 1;
+        var navbarHeight = 1400;
+        $(window).scroll(function(event) {
+            didScroll = true;
+        });
+
+        setInterval(function() {
+            if (didScroll) {
+                hasScrolled();
+                didScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var st = $(this).scrollTop();
+
+            // Make sure they scroll more than delta
+            if (Math.abs(lastScrollTop - st) <= delta)
+                return;
+
+            if ( st > navbarHeight) {
+                // Scroll Down
+                $(".overlay").css({
+                    background: ' rgba(0, 0, 0, 0.9)'
+                });
+            } else {
+                // Scroll Up
+                if (st + $(window).height() < $(document).height()) {
+                    $(".overlay").css({
+                        background: ' rgba(0, 0, 0, 0)'
+                    });
+                }
+            }
+
+            if (st > navbarHeight) {
+                // Scroll Down
+                $('.scroll-title').addClass('scrolled');
+        } else {
+            // Scroll Up
+            $(".scroll-title").removeClass('scrolled');
+        }
+
+        lastScrollTop = st;
+    }
+}
+
+
+});
+</script>
+
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="center">
+  <div class="measure">
+    <small>
+     
+    </small>
+  </div>
+</footer>
+
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
+                    <script>
+                    $(document).ready(function() {
+                        $('#blog-filter').accordion();
+
+                        $('.burgWrapper, footer').on('click', function() {
+                            $('.ui.sidebar').sidebar('toggle');
+                            $('.burg').toggleClass('activeBurg');
+                        });
+
+                        $('.ui.sidebar').sidebar({
+                            onHide: function() {
+                                $('.burg').toggleClass('activeBurg');
+                            }
+                        });
+                    });
+                    </script>
+                </div>
+            </div>
+</body>
+
+</html>

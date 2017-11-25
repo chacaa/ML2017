@@ -1,0 +1,23 @@
+<div class="ui right sidebar vertical menu">
+    <div class="sidebar-container">
+        <a class="green item" href="{{ site.baseurl }}/">
+            <i class="home icon"></i>Inicio
+        </a>
+        <a class="item" href="https://github.com/chacaa/ML2017">
+            <i class="github icon"></i>Repositorio
+        </a>
+      
+        <div class="ui horizontal divider">
+            <h6>Post más recientes</h6></div>
+        <div class="ui list">
+            {% for post in site.posts limit:3 %}
+            <div class="item">
+                <div class="content">
+                    <h6><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h6>
+                    <div class="description">{{ post.date | date: "%b %-d, %Y" }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

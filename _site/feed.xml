@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML2017</title>
+    <description>Porfolio de machine learning</description>
+    <link>http://localhost:4000/ML2017/</link>
+    <atom:link href="http://localhost:4000/ML2017/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Detección de SPAM</title>
+        <description>&lt;p&gt;Hoy en dia es muy común que las empresas comuniquen sus promociones a través de mensajes de texto, esto genera malestar dado que muchas veces las ofertas/promociones que llegan no son del agrado o no interesan al usuario y para empeorar la situacion aun mas, llegan con mucha frecuencia.
+A raíz de este problema es que nos resultó interesante investigar acerca de esto y poder encontrar una manera  de determinar de forma automática cuales mensajes corresponden a spam y cuáles no. Esto podría ser de gran ayuda si luego se quisiera automatizar la eliminación de los mismos o crear un aplicación que bloquee este tipo de mensajes.
+Es por esta razón que se busco un dataset el cual nos permitiera realizar dicha investigación.
+Lo que se busca con este caso de estudio es poder crear un modelo que permita predecir si un mensaje es SPAM o no.&lt;/p&gt;
+
+&lt;h3 id=&quot;análisis-del-problema&quot;&gt;Análisis del problema&lt;/h3&gt;
+&lt;p&gt;El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
+Claramente el caso de estudio plantea un problema de clasificación dado que se busca clasificar el SMS en alguna de las clases de salida. En este caso al solo poder tomar dos valores, SPAM o NO SPAM, y al ser un problema de clasificación podemos hilar más profundo y ver que nos encontramos frente a un claro problema de clasificación binaria.&lt;/p&gt;
+
+&lt;h3 id=&quot;análisis-de-los-datos&quot;&gt;Análisis de los datos&lt;/h3&gt;
+&lt;p&gt;El dataset utilizado fue obtenido se llama “SMS Spam Collection”, el mismo se puede encontrar entre los dataset ofrecidos por Kaggle a través de la siguiente &lt;a href=&quot;https://www.kaggle.com/uciml/sms-spam-collection-dataset&quot;&gt;URL&lt;/a&gt;.
+El dataset contiene 5.574 observaciones y no presenta valores faltantes. El mismo está compuesto por dos atributos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;result&lt;/strong&gt;: Corresponde al resultado de la observación, el mismo puede tomar los valores “ham” para el caso cuando el SMS es legítimo, mientras que toma el valor “spam” cuando el SMS es realmente SPAM. El atributo es binomial.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;message&lt;/strong&gt;: Este atributo contiene el contenido del SMS, el cual es un mensaje en idioma inglés. Este atributo es polynomial.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 25 Nov 2017 13:55:47 +0000</pubDate>
+        <link>http://localhost:4000/ML2017/casos/2017/11/25/spam-detection/</link>
+        <guid isPermaLink="true">http://localhost:4000/ML2017/casos/2017/11/25/spam-detection/</guid>
+      </item>
+    
+      <item>
+        <title>Temperatura mínima en Melbourne</title>
+        <description>&lt;p&gt;El problema planteado en este caso de estudio es poder crear y entrenar a partir de los datos históricos correspondientes al periodo de 1981-1990 de las temperaturas mínimas diarias de Melbourne, Australia, para poder luego aplicarlo a datos actuales similares para poder predecir la salida, en este caso la temperatura mínima para ese dia.
+Dada la estructura intrínseca del problema es ideal para aplicar la técnica de Time Series Forecasting.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.abc.net.au/news/image/8041730-16x9-940x529.jpg&quot; alt=&quot;Melbourne, Australia&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;información-del-dataset&quot;&gt;Información del dataset&lt;/h3&gt;
+&lt;p&gt;Ref: &lt;a href=&quot;https://datamarket.com/data/set/2324/daily-minimum-temperatures-in-melbourne-australia-1981-1990#!ds=2324&amp;amp;display=line&quot;&gt;https://datamarket.com/data/set/2324/daily-minimum-temperatures-in-melbourne-australia-1981-1990#!ds=2324&amp;amp;display=line&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Total de datos: 3650&lt;/li&gt;
+  &lt;li&gt;Total de atributos: 2&lt;/li&gt;
+  &lt;li&gt;Total de valores faltantes: 0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Distribución de los datos del dataset:
+&lt;img src=&quot;https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2016/11/Minimum-Daily-Temperatures.png&quot; alt=&quot;gráfica&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 21 Nov 2017 20:08:05 +0000</pubDate>
+        <link>http://localhost:4000/ML2017/casos/2017/11/21/melbourn-temperature/</link>
+        <guid isPermaLink="true">http://localhost:4000/ML2017/casos/2017/11/21/melbourn-temperature/</guid>
+      </item>
+    
+      <item>
+        <title>Enfermedades cardíacas</title>
+        <description>&lt;p&gt;El problema se basa en el estudio de enfermedades cardíacas, a partir del estudio de 4 dataset de datos tomados de 4 lugares geográficamente distantes (Cleveland - EE.UU. EAST, Hungría, Suiza, y VA Long Beach - EE.UU. WEST), obtenidos del sitio web de la Universidad de California (Irvine). El objetivo principal de este estudio es la predicción de la existencia de enfermedades al corazón del paciente. A partir de estos datasets, se pretende lograr una predicción de si el paciente padece/rá (o no) una enfermedad cardíaca. Dado lo costoso de los tratamientos médicos para enfermedades cardíacas, la intención es poder a partir de estos datos, predecir cuales son aquellos pacientes con mayor riesgo de enfermedades cardíacas, y así tratar a este tipo de pacientes de forma preventiva, y no reactiva. Con esto se disminuirían tanto los costos de tratamiento reactivo, así como evitar posibles cuadros cardíacos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://www.philips.co.uk/c-dam/b2bhc/master/sites/lig/cardiac/treating-cardiac-diseases-2.jpg&quot; alt=&quot;corazón&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;información-de-dataset&quot;&gt;Información de dataset&lt;/h3&gt;
+&lt;p&gt;Ref: &lt;a href=&quot;http://archive.ics.uci.edu/ml/datasets/heart+Disease&quot;&gt;http://archive.ics.uci.edu/ml/datasets/heart+Disease&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Total de datos: 899&lt;/li&gt;
+  &lt;li&gt;Total de atributos: 76&lt;/li&gt;
+  &lt;li&gt;Cantidad de atributos utilizados por otros: 14&lt;/li&gt;
+  &lt;li&gt;Cantidad de atributos relevantes empleados en nuestra solución: 22&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;método-de-aprendizaje-utilizado&quot;&gt;Método de aprendizaje utilizado&lt;/h3&gt;
+&lt;p&gt;Para este caso de estudio se trabajará con el método de &lt;a href=&quot;https://en.wikipedia.org/wiki/Logistic_regression&quot;&gt;Regresión Logística&lt;/a&gt;, dentro del &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf&quot;&gt;documento adjunto&lt;/a&gt; se explican las razones de la elección del mismo.&lt;/p&gt;
+
+&lt;h3 id=&quot;técnicas-de-separación-de-datos-para-la-validación&quot;&gt;Técnicas de separación de datos para la validación&lt;/h3&gt;
+&lt;p&gt;Las técnicas utilizadas en este caso de estudio son &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross-validation_(statistics)&quot;&gt;Cross Validation&lt;/a&gt; y &lt;a href=&quot;https://docs.rapidminer.com/studio/operators/validation/split_validation.html&quot;&gt;Split Validation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;herramienta-utilizada&quot;&gt;Herramienta utilizada&lt;/h3&gt;
+&lt;p&gt;En este caso de estudio se trabajo con la herramienta &lt;a href=&quot;https://docs.rapidminer.com&quot;&gt;RapidMiner&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;solución&quot;&gt;Solución&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documento de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/tree/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
+&lt;p&gt;Luego del estudio realizado, y de la experimentación con diferentes modelos y operadores llegamos a la conclusión de que el modelo generado obtiene mejores resultados con la selección de atributos propia que con la realizada en el estudio original. También se considera que haciendo un estudio más a fondo de cada uno de los atributos, tal vez con la ayuda de expertos en el tema, se podría optimizar aún más este modelo.
+Para una conclusión más detallada puede consultar la sección &lt;em&gt;Análisis de los Resultados&lt;/em&gt; en el &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf&quot;&gt;documento del estudio&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Sep 2017 23:55:05 +0000</pubDate>
+        <link>http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</link>
+        <guid isPermaLink="true">http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</guid>
+      </item>
+    
+  </channel>
+</rss>

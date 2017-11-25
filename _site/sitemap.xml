@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</loc>
+<lastmod>2017-09-15T20:55:05-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/casos/2017/11/21/melbourn-temperature/</loc>
+<lastmod>2017-11-21T17:08:05-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/casos/2017/11/25/spam-detection/</loc>
+<lastmod>2017-11-25T10:55:47-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/</loc>
+</url>
+</urlset>
