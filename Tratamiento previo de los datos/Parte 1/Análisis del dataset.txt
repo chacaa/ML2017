@@ -1,0 +1,18 @@
+Se eliminan los atributos:
+●	Cabine - Lo removemos porque faltan demasiados datos y no creemos que aporte tanto
+●	Life Boat - Mismo caso que Cabine
+●	Nombre - No tiene sentido, no aporta nada
+●	Ticket number - No aporta, no tiene relación, a priori,con clase social
+====================================================================
+Con solo los 4 superiores eliminados: 75.83% precisión.
+
+●	Passenger Fare - No aporta valor ya que la clase social la sacamos a partir de otro atributo
+●	Port of Embarkation - No aporta nada
+====================================================================
+Con las 6 superiores eliminadas: 75.06% precisión.
+
+Se van solamente las tuplas que no tienen datos:
+●	Age - vamos a eliminar las tuplas que no contienen valor para este atributo, dado que es importante para poder determinar si se salvan o no y ademas la cantidad de datos faltantes en relación al total no es tanta, menos de ⅕.
+Vamos a normalizar los valores de age categorizando los mismos en niño, adolescente, adulto y mayor.
+===================================================================
+No se llegó a hacer pruebas con este último.
