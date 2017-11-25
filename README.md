@@ -10,6 +10,4 @@ Este repositorio contiene todos los trabajos realizados en el curso Machine Lear
 
 ### Antes de empezar
 Se asume que la persona sabe y entiende que es Machine Learning. 
-En caso de que no sepa o no entienda recomendamos que se lea el archivo de [Introducción a Machine Learning](https://github.com/chacaa/ML2017/blob/master/Introducci%C3%B3n%20a%20Machine%20Learning.md).
-Para los trabajos realizados se utiliza la herramienta [RapidMiner](https://docs.rapidminer.com) y planillas de cálculo en Excel.
-
+En caso de que no sepa o no entienda recomendamos que se lea el archivo de [Introducción a Machine Learning](https://github.com/chacaa/ML2017/blob/master/introduccion-a-machine-learning.md).
