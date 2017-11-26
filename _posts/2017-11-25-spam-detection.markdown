@@ -10,7 +10,7 @@ thumbnail-image: http://www.yomzansi.com/wp-content/uploads/2015/11/avoid-spam-s
 comments: false
 author: Santiago Casás
 author-image: http://img.sparknotes.com/content/sparklife/sparktalk/nov2016litchardeathquiz1_MediumWide.jpg
-author-bio: I love playing outside, fort building, and skiing powder with my wife and dog.  Currently a front end devloper at AppNeta.
+author-bio: I ♥ Machine Learning.
 ---
 Hoy en dia es muy común que las empresas comuniquen sus promociones a través de mensajes de texto, esto genera malestar dado que muchas veces las ofertas/promociones que llegan no son del agrado o no interesan al usuario y para empeorar la situacion aun mas, llegan con mucha frecuencia.
 A raíz de este problema es que nos resultó interesante investigar acerca de esto y poder encontrar una manera  de determinar de forma automática cuales mensajes corresponden a spam y cuáles no. Esto podría ser de gran ayuda si luego se quisiera automatizar la eliminación de los mismos o crear un aplicación que bloquee este tipo de mensajes.
