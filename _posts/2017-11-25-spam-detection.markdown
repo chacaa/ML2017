@@ -17,7 +17,7 @@ A raíz de este problema es que nos resultó interesante investigar acerca de es
 Es por esta razón que se busco un dataset el cual nos permitiera realizar dicha investigación.
 Lo que se busca con este caso de estudio es poder crear un modelo que permita predecir si un mensaje es SPAM o no.
 
-![imagen de spam](http://cdn.makeuseof.com/wp-content/uploads/2016/10/sms-scam-994x400.jpg
+![imagen de spam](http://cdn.makeuseof.com/wp-content/uploads/2016/10/sms-scam-994x400.jpg)
 
 ### Análisis del problema
 El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
