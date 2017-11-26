@@ -5,8 +5,8 @@ subtitle: Introducción
 description: Se explica el por qué existe este porfolio, que buscamos lograr con el mismo y a quien va dirigido.
 date:   2017-08-08 19:55:27
 categories: introducción
-featured-image: https://njkaiser.github.io/portfolio/images/mlai.jpg
-thumbnail-image: https://njkaiser.github.io/portfolio/images/mlai.jpg
+featured-image: https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif
+thumbnail-image: https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif
 comments: false
 author: Mauricio Coniglio
 author-image: http://img.sparknotes.com/content/sparklife/sparktalk/nov2016litchardeathquiz1_MediumWide.jpg
