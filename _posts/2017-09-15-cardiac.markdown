@@ -33,9 +33,9 @@ Las técnicas utilizadas en este caso de estudio son [Cross Validation](https://
 En este caso de estudio se trabajo con la herramienta [RapidMiner](https://docs.rapidminer.com).
 
 ### Solución
-* Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf).
-* Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas).
+* Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf).
+* Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Enfermedades%20cardiacas).
 
 ### Conclusión
 Luego del estudio realizado, y de la experimentación con diferentes modelos y operadores llegamos a la conclusión de que el modelo generado obtiene mejores resultados con la selección de atributos propia que con la realizada en el estudio original. También se considera que haciendo un estudio más a fondo de cada uno de los atributos, tal vez con la ayuda de expertos en el tema, se podría optimizar aún más este modelo.
-Para una conclusión más detallada puede consultar la sección *Análisis de los Resultados* en el [documento del estudio](https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf)
+Para una conclusión más detallada puede consultar la sección *Análisis de los Resultados* en el [documento del estudio](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf)

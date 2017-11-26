@@ -10,7 +10,7 @@
         <div class="ui horizontal divider">
             <h6>Post más recientes</h6></div>
         <div class="ui list">
-            {% for post in site.posts limit:3 %}
+            {% for post in site.posts limit:2 %}
             <div class="item">
                 <div class="content">
                     <h6><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h6>
@@ -19,5 +19,9 @@
             </div>
             {% endfor %}
         </div>
+        <div class="ui horizontal divider">
+            <h6>Categorías</h6>
+        </div>
+        {% include blog-filter.html %}
     </div>
 </div>

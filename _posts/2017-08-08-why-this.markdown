@@ -4,7 +4,7 @@ title:  Motivación de este porfolio
 subtitle: Introducción
 description: Se explica el por qué existe este porfolio, que buscamos lograr con el mismo y a quien va dirigido.
 date:   2017-08-08 19:55:27
-categories: casos
+categories: introducción
 featured-image: https://njkaiser.github.io/portfolio/images/mlai.jpg
 thumbnail-image: https://njkaiser.github.io/portfolio/images/mlai.jpg
 comments: false
@@ -26,4 +26,4 @@ Los trabajos corresponden a problemas planteados por la catedra del curso, asi c
 * [Gianni Iaquinta](https://www.linkedin.com/in/gianni-iaquinta-mendez-26176489/)
 
 ### Antes de empezar
-Se asume que la persona sabe y entiende que es Machine Learning. En caso de que no sepa o no entienda recomendamos que se lea el archivo de [Introducción a Machine Learning](introduccion-a-machine-learning.md).
+Se asume que la persona sabe y entiende que es Machine Learning. En caso de que no sepa o no entienda recomendamos que se lea el archivo de [Introducción a Machine Learning](https://github.com/chacaa/ML2017/blob/master/introduccion-a-machine-learning.md).
