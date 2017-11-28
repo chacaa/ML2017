@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>SMS SPAM Detection</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <style>
+      input {
+        background-color: white !important;
+      }
+
+      input:-webkit-autofill {
+        background-color: white !important;
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
+
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+      }
+
+      .success { color: green }
+      .failure { color: red }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h4>SMS SPAM Detection</h4>
+        <div class="divider"></div>
+        <div class="section">
+          <h5>Check if a sms is SPAM or not</h5>
+          <form id="message-form" class="col s12">
+            <div class="row">
+              <div class="input-field col s10">
+                <input placeholder="You won a prize! Click here for more information" id="message" type="text" class="validate">
+                <label for="message">Message</label>
+              </div>
+              <div class="input-field col s2">
+                <button type="submit" class="waves-effect waves-light btn-large">Es SPAM?</button>
+              </div>
+            </div>
+          </form>
+          <div class="col s12">
+            <table>
+              <thead>
+                <tr>
+                  <th>Message</th>
+                  <th>Result</th>
+                  <th>Confidence (Ham)</th>
+                  <th>Confidence (Spam)</th>
+                </tr>
+              </thead>
+
+              <tbody id="results-table-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('#message-form').submit(function(event) {
+          event.preventDefault();
+          $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/api/rest/process/spamtest.rmp',
+            contentType: "application/json",
+            data: { message: $('#message').val() },
+            crossDomain: true,
+            headers: {
+              'Authorization': 'Basic YWRtaW46Y2hhbmdlaXQ=',
+            },
+            success: function (result) {
+              var newRow = '<tr>';
+              newRow += '<td>' + $('#message').val() + '</td>';
+              newRow += '<td>' + (result[0]['prediction(result)'] == 'spam' ? '<span class="failure">Spam</span>' : '<span class="success">Ham</span>') + '</td>';
+              newRow += '<td>' + result[0]['confidence(ham)'] + '</td>';
+              newRow += '<td>' + result[0]['confidence(spam)'] + '</td>';
+              newRow += '</tr>';
+              $('#results-table-body').prepend(newRow);
+              $('#message').val('');
+            },
+            error: function (error) {
+              alert('Ingrese un mensaje correcto');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
