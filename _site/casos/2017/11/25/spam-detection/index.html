@@ -12,7 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for ML2017" href="/ML2017/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/ML2017/css/pixyll.css?201711251722" type="text/css">
+    <link rel="stylesheet" href="/ML2017/css/pixyll.css?201711281922" type="text/css">
 
     <!-- Fonts -->
     <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
@@ -85,7 +85,7 @@
          
          <span class="post-meta small">
   
-    2 minute read
+    4 minute read
   
   </span>
           <section style="margin-top: 100px;">
@@ -120,14 +120,71 @@
                 </div>
             </div>
             
-            <div class="item">
-                <div class="content">
-                    <h6><a href="/ML2017/casos/2017/09/15/cardiac/">Enfermedades cardíacas</a></h6>
-                    <div class="description">Sep 15, 2017</div>
-                </div>
-            </div>
-            
         </div>
+        <div class="ui horizontal divider">
+            <h6>Categorías</h6>
+        </div>
+        <div class="ui fluid compact accordion" id="blog-filter">
+    
+    <div class="title filter" data-filter=".introducción">
+        <i class="dropdown icon"></i>
+        <h6 style="display:inline-block; text-transform: capitalize;">introducción</h6>
+    </div>
+    <div class="content inner">
+         <div class="ui compact list">
+              
+
+  <div class="item">
+    <div class="content">
+      <h6><a href="/ML2017/introducci%C3%B3n/2017/08/08/why-this/">Motivación de este porfolio</a></h6>
+      <div class="description">Aug 8, 2017</div>
+    </div>
+  </div>
+
+          
+    </div>
+    </div>
+    
+    <div class="title filter" data-filter=".casos">
+        <i class="dropdown icon"></i>
+        <h6 style="display:inline-block; text-transform: capitalize;">casos</h6>
+    </div>
+    <div class="content inner">
+         <div class="ui compact list">
+              
+
+  <div class="item">
+    <div class="content">
+      <h6><a href="/ML2017/casos/2017/11/25/spam-detection/">Detección de SPAM</a></h6>
+      <div class="description">Nov 25, 2017</div>
+    </div>
+  </div>
+
+          
+
+  <div class="item">
+    <div class="content">
+      <h6><a href="/ML2017/casos/2017/11/21/melbourn-temperature/">Temperatura mínima en Melbourne</a></h6>
+      <div class="description">Nov 21, 2017</div>
+    </div>
+  </div>
+
+          
+
+  <div class="item">
+    <div class="content">
+      <h6><a href="/ML2017/casos/2017/09/15/cardiac/">Enfermedades cardíacas</a></h6>
+      <div class="description">Sep 15, 2017</div>
+    </div>
+  </div>
+
+          
+    </div>
+    </div>
+    
+</div>
+
+
     </div>
 </div>
     <div class="pusher" id="dimmer">
@@ -151,7 +208,7 @@
     <br> 
     <span class="post-meta small">
   
-    1 minute read
+    4 minute read
   
   </span>
 </div>
@@ -160,6 +217,16 @@
 A raíz de este problema es que nos resultó interesante investigar acerca de esto y poder encontrar una manera  de determinar de forma automática cuales mensajes corresponden a spam y cuáles no. Esto podría ser de gran ayuda si luego se quisiera automatizar la eliminación de los mismos o crear un aplicación que bloquee este tipo de mensajes.
 Es por esta razón que se busco un dataset el cual nos permitiera realizar dicha investigación.
 Lo que se busca con este caso de estudio es poder crear un modelo que permita predecir si un mensaje es SPAM o no.</p>
+
+<p><img src="http://cdn.makeuseof.com/wp-content/uploads/2016/10/sms-scam-994x400.jpg" alt="imagen de spam" /></p>
+
+<h3 id="objetivos">Objetivos</h3>
+<ul>
+  <li>Poder aplicar lo aprendido durante el curso en una apliación real</li>
+  <li>Obtener un modelo con una bena predicción</li>
+  <li>Aplicar lo aprendido en estas semanas para construir un modelo con buen porcentaje de predicción</li>
+  <li>Poder integrar RapidMiner con RapidMiner Server para poder consumir el servicio desde una App</li>
+</ul>
 
 <h3 id="análisis-del-problema">Análisis del problema</h3>
 <p>El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
@@ -173,6 +240,39 @@ El dataset contiene 5.574 observaciones y no presenta valores faltantes. El mism
   <li><strong>message</strong>: Este atributo contiene el contenido del SMS, el cual es un mensaje en idioma inglés. Este atributo es polynomial.</li>
 </ul>
 
+<h3 id="técnica-de-validación-del-modelo">Técnica de validación del modelo</h3>
+<p>La técnica utilizada en este caso de estudio fue <a href="https://en.wikipedia.org/wiki/Cross-validation_(statistics)">Cross Validation</a>.</p>
+
+<h3 id="herramientas-utilizadas">Herramientas utilizadas</h3>
+<p>En este caso de estudio se trabajo con la herramientas <a href="https://docs.rapidminer.com">RapidMiner</a> y <a href="https://docs.rapidminer.com/server">RapidMiner Server</a>.</p>
+
+<h3 id="solución">Solución</h3>
+<ul>
+  <li>Documento de la investigación en el siguiente <a href="https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf">link</a>.</li>
+  <li>Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente <a href="https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Deteccion%20de%20SPAM">link</a>, también contiene el código fuente de la aplicación construida para consumir el servicio.</li>
+</ul>
+
+<h3 id="análisis-de-los-resultados">Análisis de los Resultados</h3>
+<p>En el documento ya mostramos los resultados obtenidos por el proceso utilizado pero vamos a analizar los mismos.
+<img src="https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/Results.jpeg" alt="Resultados" />
+Como se puede ver en la imagen la exactitud obtenida es del casi 97%, esto quiere decir que casi no hay falsos positivos y/o falsos negativos. La manera de verificar si el resultado obtenido es bueno es verificando el porcentaje recall del proceso, dado que el recall nos dice que cantidad de spam el modelo predijo sobre toda la cantidad de spam que tiene el dataset.</p>
+
+<p><code class="highlighter-rouge">recall = tp/(tp+fn)</code></p>
+
+<p><code class="highlighter-rouge">tp</code> es la cantidad de spam que el modelo predijo que era spam y es realmente spam en el dataset.
+<code class="highlighter-rouge">fn</code> es la cantidad de spam que hay en el dataset y que el modelo no predice como spam.
+Como la clase a predecir es si el mensaje es spam o no obtuvimos casi un 85% de acierto, por lo que la cantidad de <code class="highlighter-rouge">fn</code> es baja.
+Aparte la <code class="highlighter-rouge">precision</code> tambien es buena, porque obtuvimos casi 90% de acierto; lo que nos quiere decir que de todo lo que el modelo predijo como spam, solo una pequeña cantidad no lo fue.</p>
+
+<p><code class="highlighter-rouge">precision = tp/(tp+fp)</code></p>
+
+<p><code class="highlighter-rouge">fp</code> es la cantidad de predicciones que hizo mal el modelo, es decir que es la cantidad de lo que el modelo predijo como spam y era legitimo.</p>
+
+<h3 id="conclusión">Conclusión</h3>
+<p>Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.</p>
+
+<p><img src="https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.PNG" alt="Captura App Web" />
+Captura de la applicación que consume el servicio, código fuente de la misma en el siguiente <a href="https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html">link</a>.</p>
 
 </article>
 <section class="section align-center" style="border-top: 1px solid #ccc; margin-top: 6%;">
@@ -241,14 +341,6 @@ $(document).ready(function() {
                             </div>
                         </div>
                     </div>
-                    <footer class="center">
-  <div class="measure">
-    <small>
-     
-    </small>
-  </div>
-</footer>
-
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
                     <script>
                     $(document).ready(function() {

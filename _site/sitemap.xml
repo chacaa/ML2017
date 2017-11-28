@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/ML2017/introducci%C3%B3n/2017/08/08/why-this/</loc>
+<lastmod>2017-08-08T16:55:27-03:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</loc>
 <lastmod>2017-09-15T20:55:05-03:00</lastmod>
 </url>
@@ -14,5 +18,29 @@
 </url>
 <url>
 <loc>http://localhost:4000/ML2017/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf</loc>
+<lastmod>2017-11-28T18:52:36-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html</loc>
+<lastmod>2017-11-28T19:01:24-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf</loc>
+<lastmod>2017-11-25T17:29:16-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Trabajos%20de%20aplicaci%C3%B3n/Algoritmos%20No%20Lineales/Parte%201/Consigna.pdf</loc>
+<lastmod>2017-11-25T17:33:41-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Trabajos%20de%20aplicaci%C3%B3n/Algoritmos%20No%20Lineales/Parte%202/Consigna.pdf</loc>
+<lastmod>2017-11-25T17:33:41-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ML2017/Trabajos%20de%20aplicaci%C3%B3n/Ensambles/Parte%201/Consigna.pdf</loc>
+<lastmod>2017-11-25T17:33:41-03:00</lastmod>
 </url>
 </urlset>

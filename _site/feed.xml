@@ -13,6 +13,16 @@ A raíz de este problema es que nos resultó interesante investigar acerca de es
 Es por esta razón que se busco un dataset el cual nos permitiera realizar dicha investigación.
 Lo que se busca con este caso de estudio es poder crear un modelo que permita predecir si un mensaje es SPAM o no.&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;http://cdn.makeuseof.com/wp-content/uploads/2016/10/sms-scam-994x400.jpg&quot; alt=&quot;imagen de spam&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;objetivos&quot;&gt;Objetivos&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Poder aplicar lo aprendido durante el curso en una apliación real&lt;/li&gt;
+  &lt;li&gt;Obtener un modelo con una bena predicción&lt;/li&gt;
+  &lt;li&gt;Aplicar lo aprendido en estas semanas para construir un modelo con buen porcentaje de predicción&lt;/li&gt;
+  &lt;li&gt;Poder integrar RapidMiner con RapidMiner Server para poder consumir el servicio desde una App&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;análisis-del-problema&quot;&gt;Análisis del problema&lt;/h3&gt;
 &lt;p&gt;El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
 Claramente el caso de estudio plantea un problema de clasificación dado que se busca clasificar el SMS en alguna de las clases de salida. En este caso al solo poder tomar dos valores, SPAM o NO SPAM, y al ser un problema de clasificación podemos hilar más profundo y ver que nos encontramos frente a un claro problema de clasificación binaria.&lt;/p&gt;
@@ -25,6 +35,39 @@ El dataset contiene 5.574 observaciones y no presenta valores faltantes. El mism
   &lt;li&gt;&lt;strong&gt;message&lt;/strong&gt;: Este atributo contiene el contenido del SMS, el cual es un mensaje en idioma inglés. Este atributo es polynomial.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;técnica-de-validación-del-modelo&quot;&gt;Técnica de validación del modelo&lt;/h3&gt;
+&lt;p&gt;La técnica utilizada en este caso de estudio fue &lt;a href=&quot;https://en.wikipedia.org/wiki/Cross-validation_(statistics)&quot;&gt;Cross Validation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;herramientas-utilizadas&quot;&gt;Herramientas utilizadas&lt;/h3&gt;
+&lt;p&gt;En este caso de estudio se trabajo con la herramientas &lt;a href=&quot;https://docs.rapidminer.com&quot;&gt;RapidMiner&lt;/a&gt; y &lt;a href=&quot;https://docs.rapidminer.com/server&quot;&gt;RapidMiner Server&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;solución&quot;&gt;Solución&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Documento de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Deteccion%20de%20SPAM&quot;&gt;link&lt;/a&gt;, también contiene el código fuente de la aplicación construida para consumir el servicio.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;análisis-de-los-resultados&quot;&gt;Análisis de los Resultados&lt;/h3&gt;
+&lt;p&gt;En el documento ya mostramos los resultados obtenidos por el proceso utilizado pero vamos a analizar los mismos.
+&lt;img src=&quot;https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/Results.jpeg&quot; alt=&quot;Resultados&quot; /&gt;
+Como se puede ver en la imagen la exactitud obtenida es del casi 97%, esto quiere decir que casi no hay falsos positivos y/o falsos negativos. La manera de verificar si el resultado obtenido es bueno es verificando el porcentaje recall del proceso, dado que el recall nos dice que cantidad de spam el modelo predijo sobre toda la cantidad de spam que tiene el dataset.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;recall = tp/(tp+fn)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tp&lt;/code&gt; es la cantidad de spam que el modelo predijo que era spam y es realmente spam en el dataset.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;fn&lt;/code&gt; es la cantidad de spam que hay en el dataset y que el modelo no predice como spam.
+Como la clase a predecir es si el mensaje es spam o no obtuvimos casi un 85% de acierto, por lo que la cantidad de &lt;code class=&quot;highlighter-rouge&quot;&gt;fn&lt;/code&gt; es baja.
+Aparte la &lt;code class=&quot;highlighter-rouge&quot;&gt;precision&lt;/code&gt; tambien es buena, porque obtuvimos casi 90% de acierto; lo que nos quiere decir que de todo lo que el modelo predijo como spam, solo una pequeña cantidad no lo fue.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;precision = tp/(tp+fp)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fp&lt;/code&gt; es la cantidad de predicciones que hizo mal el modelo, es decir que es la cantidad de lo que el modelo predijo como spam y era legitimo.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
+&lt;p&gt;Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.PNG&quot; alt=&quot;Captura App Web&quot; /&gt;
+Captura de la applicación que consume el servicio, código fuente de la misma en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Sat, 25 Nov 2017 13:55:47 +0000</pubDate>
         <link>http://localhost:4000/ML2017/casos/2017/11/25/spam-detection/</link>
@@ -81,17 +124,42 @@ Dada la estructura intrínseca del problema es ideal para aplicar la técnica de
 
 &lt;h3 id=&quot;solución&quot;&gt;Solución&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;Documento de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/tree/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Documento de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente &lt;a href=&quot;https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Enfermedades%20cardiacas&quot;&gt;link&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;conclusión&quot;&gt;Conclusión&lt;/h3&gt;
 &lt;p&gt;Luego del estudio realizado, y de la experimentación con diferentes modelos y operadores llegamos a la conclusión de que el modelo generado obtiene mejores resultados con la selección de atributos propia que con la realizada en el estudio original. También se considera que haciendo un estudio más a fondo de cada uno de los atributos, tal vez con la ayuda de expertos en el tema, se podría optimizar aún más este modelo.
-Para una conclusión más detallada puede consultar la sección &lt;em&gt;Análisis de los Resultados&lt;/em&gt; en el &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf&quot;&gt;documento del estudio&lt;/a&gt;&lt;/p&gt;
+Para una conclusión más detallada puede consultar la sección &lt;em&gt;Análisis de los Resultados&lt;/em&gt; en el &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf&quot;&gt;documento del estudio&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Fri, 15 Sep 2017 23:55:05 +0000</pubDate>
         <link>http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</link>
         <guid isPermaLink="true">http://localhost:4000/ML2017/casos/2017/09/15/cardiac/</guid>
+      </item>
+    
+      <item>
+        <title>Motivación de este porfolio</title>
+        <description>&lt;p&gt;Lo que buscamos con este porfolio es poder demostrar los conocimientos adquiridos durante el segundo semestre de 2017, en el cual cursamos la asignatura &lt;em&gt;Introducción a los métodos de aprendizaje automático&lt;/em&gt; en el marco de las materias optativas de la &lt;a href=&quot;http://ucu.edu.uy/es&quot;&gt;Universidad Católica del Uruguay&lt;/a&gt;. En este van a encontrar soluciones propuestas a distintos problemas. En ellas podrán ver un proceso completo que va desde el análisis y preparación de los datos, hasta la generación de un modelo y su posterior utilización en una aplicación real.&lt;/p&gt;
+
+&lt;h3 id=&quot;acerca-del-repositorio&quot;&gt;Acerca del repositorio&lt;/h3&gt;
+&lt;p&gt;Desde el sitio van a tener acceso al repositorio público del grupo en el cual se encuentran los trabajos realizados por el equipo.
+Los trabajos corresponden a problemas planteados por la catedra del curso, asi como casos de interés para el equipo en el cual se quizo aplicar lo aprendido.&lt;/p&gt;
+
+&lt;h3 id=&quot;equipo&quot;&gt;Equipo&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/mauricio-coniglio-53b673b4/&quot;&gt;Mauricio Coniglio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/santiago-casás-lópez-a39967122/&quot;&gt;Santiago Casás&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/agustinbet&quot;&gt;Agustín Betancor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/mart%C3%ADn-rose-42349a51/&quot;&gt;Martín Rose&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/gianni-iaquinta-mendez-26176489/&quot;&gt;Gianni Iaquinta&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;antes-de-empezar&quot;&gt;Antes de empezar&lt;/h3&gt;
+&lt;p&gt;Se asume que la persona sabe y entiende que es Machine Learning. En caso de que no sepa o no entienda recomendamos que se lea el archivo de &lt;a href=&quot;https://github.com/chacaa/ML2017/blob/master/introduccion-a-machine-learning.md&quot;&gt;Introducción a Machine Learning&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Aug 2017 19:55:27 +0000</pubDate>
+        <link>http://localhost:4000/ML2017/introducci%C3%B3n/2017/08/08/why-this/</link>
+        <guid isPermaLink="true">http://localhost:4000/ML2017/introducci%C3%B3n/2017/08/08/why-this/</guid>
       </item>
     
   </channel>

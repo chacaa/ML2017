@@ -1,0 +1,44 @@
+Información Relevante:
+
+Este dataset es el resultado de análisis químico de vinos cultivados en 
+la misma región de Italia, pero derivados de diferentes cultivadores.
+
+El análisis determina los valores de 13 tipos de atributos encontrados
+en cada uno de los 3 tipos de vinos.
+
+El Dataset inicial tenía cerca de 30 variables, pero por alguna razón solo se obtuvieron 13 dimensiones.
+
+
+Los atributos son:
+
+ 	1) Alcohol
+ 	2) Malic acid
+ 	3) Ash
+	4) Alcalinity of ash  
+ 	5) Magnesium
+	6) Total phenols
+ 	7) Flavanoids
+ 	8) Nonflavanoid phenols
+ 	9) Proanthocyanins
+	10)Color intensity
+ 	11)Hue
+ 	12)OD280/OD315 of diluted wines
+ 	13)Proline
+
+Número de instancias (3 clases):
+
+Clase 1: 	59
+Clase 2:	71
+Clase 3:	48
+
+========================================================================
+
+El objetivo es que a partir de los valores de los atributos del vino, se pueda predecir la clase de cultivo del mismo.
+
+Los atributos son todos reales, menos el Magnesio y Proline (que son enteros). El valor de la clase es una etiqueta, que se divide en 3 clases. Cabe destacar que los valores son todos continuos. 
+
+Para la normalización de los datos: 
+
+atributo - media / (max - min)
+
+=========================================================================

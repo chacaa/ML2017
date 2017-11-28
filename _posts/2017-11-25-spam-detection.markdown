@@ -49,13 +49,20 @@ En este caso de estudio se trabajo con la herramientas [RapidMiner](https://docs
 En el documento ya mostramos los resultados obtenidos por el proceso utilizado pero vamos a analizar los mismos.
 ![Resultados](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/Results.jpeg)
 Como se puede ver en la imagen la exactitud obtenida es del casi 97%, esto quiere decir que casi no hay falsos positivos y/o falsos negativos. La manera de verificar si el resultado obtenido es bueno es verificando el porcentaje recall del proceso, dado que el recall nos dice que cantidad de spam el modelo predijo sobre toda la cantidad de spam que tiene el dataset.
+
 ```recall = tp/(tp+fn)```
+
 `tp` es la cantidad de spam que el modelo predijo que era spam y es realmente spam en el dataset.
 `fn` es la cantidad de spam que hay en el dataset y que el modelo no predice como spam.
 Como la clase a predecir es si el mensaje es spam o no obtuvimos casi un 85% de acierto, por lo que la cantidad de `fn` es baja.
 Aparte la `precision` tambien es buena, porque obtuvimos casi 90% de acierto; lo que nos quiere decir que de todo lo que el modelo predijo como spam, solo una pequeña cantidad no lo fue.
+
 ```precision = tp/(tp+fp)```
+
 `fp` es la cantidad de predicciones que hizo mal el modelo, es decir que es la cantidad de lo que el modelo predijo como spam y era legitimo.
 
 ### Conclusión
 Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.
+
+![Captura App Web](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.PNG)
+Captura de la applicación que consume el servicio, código fuente de la misma en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html).

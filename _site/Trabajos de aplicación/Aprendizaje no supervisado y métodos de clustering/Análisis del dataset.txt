@@ -1,0 +1,7 @@
+Missing values:
+	•	removidas columnas examenes 9 y 10 que tenían más de 1/3 de datos faltantes.
+	•	se cambió el missing value por el average de la columna en las otras columnas que tenían menos de 10 valores faltantes. esto se debe a que se considera que las notas de cada alumno en un mismo examen deberían estar relacionadas debido a la dificultad del mismo.
+
+
+Normalización:
+	•	se normalizó la columna del examen de admisión a un rango del 0-10 ya que sus datos estaban comprendidos en un rango distinto respecto a las otras columnas.

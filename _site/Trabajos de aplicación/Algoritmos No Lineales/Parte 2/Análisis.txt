@@ -1,0 +1,10 @@
+1) b)
+a. tipo de datos: edad es numerico e ID3 solo acepta valores categoricos, por lo cual tendriamos que clasificar los valores en rangos para definir clases y convertir el input en una entrada categorica. Y la salida también es categorica.
+
+b.c.d. No hay faltantes para ninguno de los attr. Y los outliers tampoco encontramos. Ademas si los hubiera no haria falta sacarlos en primera instancia, dado que no afectarian la prediccion del algoritmo. Tambien podria hacer overfit sobre el conjunto de entrenamiento.Se deberian remover en caso de que se quiera pulir mas la performance.
+
+c)Por que no aporta a la solucion de nuestro problema. Ademas de que es un valor numerico lo cual no nos serviria como entrada para nuestro algoritmo.
+
+f)El criterio por defecto es el 'gain_ratio', los criterios que admite, ademas del ya mencionado, son: 'information_gain', 'gini_index' y 'accuracy'. 
+
+j)Si, es intuitivo y facil de corroborar los resultados mirando este.
