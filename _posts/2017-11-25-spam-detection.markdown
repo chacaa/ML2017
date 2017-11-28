@@ -19,6 +19,12 @@ Lo que se busca con este caso de estudio es poder crear un modelo que permita pr
 
 ![imagen de spam](http://cdn.makeuseof.com/wp-content/uploads/2016/10/sms-scam-994x400.jpg)
 
+### Objetivos
+* Poder aplicar lo aprendido durante el curso en una apliación real
+* Obtener un modelo con una bena predicción
+* Aplicar lo aprendido en estas semanas para construir un modelo con buen porcentaje de predicción
+* Poder integrar RapidMiner con RapidMiner Server para poder consumir el servicio desde una App
+
 ### Análisis del problema
 El problema que se plantea es poder a través de un atributo de entrada que corresponde a un SMS en inglés, poder predecir si el mismo corresponde a un mensaje de SPAM o no.
 Claramente el caso de estudio plantea un problema de clasificación dado que se busca clasificar el SMS en alguna de las clases de salida. En este caso al solo poder tomar dos valores, SPAM o NO SPAM, y al ser un problema de clasificación podemos hilar más profundo y ver que nos encontramos frente a un claro problema de clasificación binaria.
@@ -36,7 +42,20 @@ La técnica utilizada en este caso de estudio fue [Cross Validation](https://en.
 En este caso de estudio se trabajo con la herramientas [RapidMiner](https://docs.rapidminer.com) y [RapidMiner Server](https://docs.rapidminer.com/server).
 
 ### Solución
-* Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf).
-* Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas).
+* Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf).
+* Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Deteccion%20de%20SPAM), también contiene el código fuente de la aplicación construida para consumir el servicio.
+
+### Análisis de los Resultados 
+En el documento ya mostramos los resultados obtenidos por el proceso utilizado pero vamos a analizar los mismos.
+![Resultados](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/Results.jpeg)
+Como se puede ver en la imagen la exactitud obtenida es del casi 97%, esto quiere decir que casi no hay falsos positivos y/o falsos negativos. La manera de verificar si el resultado obtenido es bueno es verificando el porcentaje recall del proceso, dado que el recall nos dice que cantidad de spam el modelo predijo sobre toda la cantidad de spam que tiene el dataset.
+```recall = tp/(tp+fn)```
+`tp` es la cantidad de spam que el modelo predijo que era spam y es realmente spam en el dataset.
+`fn` es la cantidad de spam que hay en el dataset y que el modelo no predice como spam.
+Como la clase a predecir es si el mensaje es spam o no obtuvimos casi un 85% de acierto, por lo que la cantidad de `fn` es baja.
+Aparte la `precision` tambien es buena, porque obtuvimos casi 90% de acierto; lo que nos quiere decir que de todo lo que el modelo predijo como spam, solo una pequeña cantidad no lo fue.
+```precision = tp/(tp+fp)```
+`fp` es la cantidad de predicciones que hizo mal el modelo, es decir que es la cantidad de lo que el modelo predijo como spam y era legitimo.
 
 ### Conclusión
+Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.
