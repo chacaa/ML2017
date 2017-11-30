@@ -26,7 +26,8 @@ El problema que se plantea es poder a travéz de un conjuntos de atributos relac
 El problema se trata claramente de un caso de clasificacion ya que se trata de determinar si la persona presentara una enfermedad o no.
 
 ### Información de dataset
-Se contaba con cuatros datasets distintos, los cuales contaban con los mismos atributos. Se contaba con valores faltantes, según el dataset algunos atributos no contaban con ningún valor. Los datasets utilizados se encuentran en el siguiente link: Ref: [http://archive.ics.uci.edu/ml/datasets/heart+Disease](http://archive.ics.uci.edu/ml/datasets/heart+Disease)
+Se contaba con cuatros datasets distintos, los cuales contaban con los mismos atributos. Se contaba con valores faltantes, según el dataset algunos atributos no contaban con ningún valor. Los datasets utilizados se encuentran en el siguiente link: [http://archive.ics.uci.edu/ml/datasets/heart+Disease](http://archive.ics.uci.edu/ml/datasets/heart+Disease)
+El dataset cuenta con las siguientes caracteristicas: 
 * Total de datos: 899
 * Total de atributos: 76
 * Cantidad de atributos utilizados por otros: 14
