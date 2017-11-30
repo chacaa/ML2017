@@ -1,70 +1,187 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
   <head>
-    <title>SMS SPAM Detection</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <style>
-      input {
-        background-color: white !important;
-      }
 
-      input:-webkit-autofill {
-        background-color: white !important;
-        -webkit-box-shadow: 0 0 0px 1000px white inset;
-      }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-        transition: background-color 5000s ease-in-out 0s;
-      }
+    <title>Spam Detective</title>
 
-      .success { color: green }
-      .failure { color: red }
-    </style>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
   </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <h4>SMS SPAM Detection</h4>
-        <div class="divider"></div>
-        <div class="section">
-          <h5>Check if a sms is SPAM or not</h5>
-          <form id="message-form" class="col s12">
-            <div class="row">
-              <div class="input-field col s10">
-                <input placeholder="You won a prize! Click here for more information" id="message" type="text" class="validate">
-                <label for="message">Message</label>
-              </div>
-              <div class="input-field col s2">
-                <button type="submit" class="waves-effect waves-light btn-large">Es SPAM?</button>
-              </div>
-            </div>
-          </form>
-          <div class="col s12">
-            <table>
-              <thead>
-                <tr>
-                  <th>Message</th>
-                  <th>Result</th>
-                  <th>Confidence (Ham)</th>
-                  <th>Confidence (Spam)</th>
-                </tr>
-              </thead>
 
-              <tbody id="results-table-body"></tbody>
-            </table>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Spam Detective</a>
+      </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead text-white text-center">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <h1 class="mb-5" style="text-shadow: 2px 2px black;">Esta aplicación te permite detectar si un mensaje es SPAM, probala! ;)</h1>
+          </div>
+          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form id="message-form">
+              <div class="form-row">
+                <div class="col-12" >
+                  <textarea id="message" rows="6" style="width: 100%" placeholder="Ingresá el mensaje acá..."></textarea>
+                </div>
+                <div class="col-12 col-md-4 offset-md-4">
+                  <button id="message-button" type="button" style="border-radius: 0px" class="btn btn-block btn-lg btn-primary" data-toggle="modal" data-target="#myModal">DETECTAR</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+    </header>
+
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center">
+      <div class="container">
+        <h2 class="mb-5">COMO FUNCIONA</h2>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-comment-o m-auto text-primary"></i>
+              </div>
+              <h3>Ingresá el mensaje</h3>
+              <p class="lead mb-0">Escribí en el campo de texto el mensaje que te gustaría checkear.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-mouse-pointer m-auto text-primary"></i>
+              </div>
+              <h3>Clickeá en detectar</h3>
+              <p class="lead mb-0">Clickeá en el botón detectar para obtener tu resultado.</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+              <div class="features-icons-icon d-flex">
+                <i class="fa fa-check-circle-o m-auto text-primary"></i>
+              </div>
+              <h3>Y Listo!</h3>
+              <p class="lead mb-0">Observá la predicción realizada y la confianza de la misma.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials text-center bg-dark">
+      <div class="container">
+        <h2 style="color: white" class="mb-5">DREAM TEAM</h2>
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t31.0-8/16422612_10212452805141178_5038092092469554864_o.jpg?oh=8f96acb30c63fc62295bd7018006e241&oe=5A98BAEB" alt="">
+              <h5 style="color: white">Santiago C.</h5>
+              <p style="color: white" class="font-weight-light mb-0">"I ♥ Machine Learning!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t1.0-9/14947408_10210943274434888_3748351613749899751_n.jpg?oh=bc4468ea7f8a2b0f8a7efff5365d9f77&oe=5A8A3594" alt="">
+              <h5 style="color: white">Gianni I.</h5>
+              <p style="color: white" class="font-weight-light mb-0">"Machine Learning is my life!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="https://scontent.fmvd1-1.fna.fbcdn.net/v/t1.0-9/12311329_10203895590630441_7836808763239386847_n.jpg?oh=59051b6337bbaa80c1d128fd70442bba&oe=5A892917" alt="">
+              <h5 style="color: white">Mauricio	C.</h5>
+              <p style="color: white" class="font-weight-light mb-0">"Machine Learning rules!"</p>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+              <img class="img-fluid rounded-circle mb-3" src="http://www.objetivofamosos.com/wp-content/uploads/2012/12/leo-dicaprio-port-gatsby.jpg" alt="">
+              <h5 style="color: white">Agustín B.</h5>
+              <p style="color: white" class="font-weight-light mb-0">"Machine Learning 4 evaaaa!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+            <p class="text-muted small mb-4 mb-lg-0">&copy; ML2017. All Rights Reserved.</p>
+          </div>
+          <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mr-3">
+                <a href="https://chacaa.github.io/ML2017/">
+                  <i class="fa  fa-globe fa-2x fa-fw"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://github.com/chacaa/ML2017">
+                  <i class="fa fa-github fa-2x fa-fw"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">RESULTADO</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <h5>Resultado</h5>
+            <p id="result-value"></p>
+            <h5>Precisión</h5>
+            <p id="result-precision"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" style="border-radius: 0px" class="btn btn-block btn-primary" data-dismiss="modal">OK!</button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script>
       $(document).ready(function() {
-        $('#message-form').submit(function(event) {
+        var handleSubmit = function(event) {
           event.preventDefault();
           $.ajax({
             type: 'GET',
@@ -73,24 +190,25 @@
             data: { message: $('#message').val() },
             crossDomain: true,
             headers: {
-              'Authorization': 'Basic YWRtaW46Y2hhbmdlaXQ=',
+              'Authorization': 'Basic YWRtaW46MTIz',
             },
             success: function (result) {
-              var newRow = '<tr>';
-              newRow += '<td>' + $('#message').val() + '</td>';
-              newRow += '<td>' + (result[0]['prediction(result)'] == 'spam' ? '<span class="failure">Spam</span>' : '<span class="success">Ham</span>') + '</td>';
-              newRow += '<td>' + result[0]['confidence(ham)'] + '</td>';
-              newRow += '<td>' + result[0]['confidence(spam)'] + '</td>';
-              newRow += '</tr>';
-              $('#results-table-body').prepend(newRow);
-              $('#message').val('');
+              var resultValue = result[0]['prediction(result)'] == 'spam' ? '<span style="color: red">Spam</span>' : '<span style="color: green">Ham</span>';
+              $('#result-value').html(resultValue);
+              var resultConfidence = result[0]['prediction(result)'] == 'spam' ? result[0]['confidence(spam)'] : result[0]['confidence(ham)'];
+              $('#result-precision').html(resultConfidence);
             },
             error: function (error) {
               alert('Ingrese un mensaje correcto');
             }
           });
-        });
+        };
+
+        $('#message-button').click(handleSubmit);
+        $('#message-form').submit(handleSubmit);
       });
     </script>
+
   </body>
+
 </html>
