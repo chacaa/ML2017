@@ -68,5 +68,5 @@ Aparte la `precision` tambien es buena, porque obtuvimos casi 90% de acierto; lo
 ### Conclusión
 Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.
 
-![Captura App Web](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.PNG)
+![Captura App Web](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.png)
 Captura de la applicación que consume el servicio, código fuente de la misma en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html).
