@@ -14,6 +14,7 @@ author-bio: I ♥ Machine Learning.
 ---
 Hoy en dia la tecnología a avanzado hasta cierto punto que es posible predecir con mas exactitud los hechos del futuro en base a como se a comportado en su pasado, a este tipo de técnica se la conoce como Time Series.
 Este tipo de técnica se aplica en varias áreas como ser finanzas, meteorología, industria, entre otros.
+
 ![Melbourne, Australia](http://www.abc.net.au/news/image/8041730-16x9-940x529.jpg)
 
 ### Objetivos
