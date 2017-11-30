@@ -16,8 +16,17 @@ El problema se basa en el estudio de enfermedades cardíacas, a partir del estud
 
 ![corazón](https://www.philips.co.uk/c-dam/b2bhc/master/sites/lig/cardiac/treating-cardiac-diseases-2.jpg)
 
+### Objetivos
+* Poder aplicar lo aprendido hasta el momento en un caso real
+* Aplicar lo aprendido en estas semanas para construir un modelo con buen porcentaje de predicción
+* Poder integrar varios datasets distintos
+
+### Análisis del problema
+El problema que se plantea es poder a travéz de un conjuntos de atributos relacionados a la salud de una persona predecir si la misma tenia un problema cardiaco.
+El problema se trata claramente de un caso de clasificacion ya que se trata de determinar si la persona presentara una enfermedad o no.
+
 ### Información de dataset
-Ref: [http://archive.ics.uci.edu/ml/datasets/heart+Disease](http://archive.ics.uci.edu/ml/datasets/heart+Disease)
+Se contaba con cuatros datasets distintos, los cuales contaban con los mismos atributos. Se contaba con valores faltantes, según el dataset algunos atributos no contaban con ningún valor. Los datasets utilizados se encuentran en el siguiente link: Ref: [http://archive.ics.uci.edu/ml/datasets/heart+Disease](http://archive.ics.uci.edu/ml/datasets/heart+Disease)
 * Total de datos: 899
 * Total de atributos: 76
 * Cantidad de atributos utilizados por otros: 14
@@ -26,7 +35,7 @@ Ref: [http://archive.ics.uci.edu/ml/datasets/heart+Disease](http://archive.ics.u
 ### Método de aprendizaje utilizado
 Para este caso de estudio se trabajará con el método de [Regresión Logística](https://en.wikipedia.org/wiki/Logistic_regression), dentro del [documento adjunto](https://github.com/chacaa/ML2017/blob/master/Caso%20de%20estudio%20-%20Enfermedades%20cardiacas/documento.pdf) se explican las razones de la elección del mismo.
 
-### Técnicas de separación de datos para la validación
+### Técnica de validación del modelo
 Las técnicas utilizadas en este caso de estudio son [Cross Validation](https://en.wikipedia.org/wiki/Cross-validation_(statistics)) y [Split Validation](https://docs.rapidminer.com/studio/operators/validation/split_validation.html).
 
 ### Herramienta utilizada
@@ -38,4 +47,4 @@ En este caso de estudio se trabajo con la herramienta [RapidMiner](https://docs.
 
 ### Conclusión
 Luego del estudio realizado, y de la experimentación con diferentes modelos y operadores llegamos a la conclusión de que el modelo generado obtiene mejores resultados con la selección de atributos propia que con la realizada en el estudio original. También se considera que haciendo un estudio más a fondo de cada uno de los atributos, tal vez con la ayuda de expertos en el tema, se podría optimizar aún más este modelo.
-Para una conclusión más detallada puede consultar la sección *Análisis de los Resultados* en el [documento del estudio](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf)
+Para una conclusión más detallada puede consultar la sección *Análisis de los Resultados* en el [documento del estudio](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Enfermedades%20cardiacas/documento.pdf)	
