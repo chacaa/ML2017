@@ -41,6 +41,10 @@ La técnica utilizada en este caso de estudio fue [Cross Validation](https://en.
 ### Herramientas utilizadas
 En este caso de estudio se trabajo con la herramientas [RapidMiner](https://docs.rapidminer.com) y [RapidMiner Server](https://docs.rapidminer.com/server).
 
+### Método de aprendizaje utilizado
+Para este caso de estudio se trabajará con un método de ensamble [Vote](https://en.wikipedia.org/wiki/Ensemble_learning), donde dentro del mismo se utilizan los operadores SVM, Naive Bayes y W-Logistics(algoritmo que se encuentra en la extensión de Weka). Dentro del [documento adjunto](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf) se explican las razones de la elección del mismo.
+También se debió agregar distintos tipos de operadores para poder separar las palabras y generamos un archivo con palabras que representen algo importante para poder generar el modelo.
+
 ### Solución
 * Documento de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/obligatorio%20grupal.pdf).
 * Proceso de RapidMiner con la guía para replicar los resultados de la investigación en el siguiente [link](https://github.com/chacaa/ML2017/tree/master/Casos%20de%20estudio/Deteccion%20de%20SPAM), también contiene el código fuente de la aplicación construida para consumir el servicio.
