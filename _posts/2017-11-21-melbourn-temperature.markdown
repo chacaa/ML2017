@@ -12,8 +12,9 @@ author: Gianni Iaquinta
 author-image: http://img.sparknotes.com/content/sparklife/sparktalk/nov2016litchardeathquiz1_MediumWide.jpg
 author-bio: I ♥ Machine Learning.
 ---
-Hoy en dia la tecnología a avanzado hasta cierto punto que es posible predecir con mas exactitud los hechos del futuro en base a como se a comportado en su pasado, a este tipo de técnica se la conoce como Time Series.
+Hoy en dia la tecnología a avanzado hasta cierto punto que es posible predecir con más exactitud los hechos del futuro en base a como se a comportado en su pasado, a este tipo de técnica se la conoce como Time Series.
 Este tipo de técnica se aplica en varias áreas como ser finanzas, meteorología, industria, entre otros.
+Es por esta razón que nos pareció interesante estudiar un caso que clasificará dentro de la temática de Time Series. Motivados por la catédra nos adentramos en la búsqueda de un dataset, en el cual poder aplicar esta técnica. Luego de evaluar distintos datasets fue que nos encontramos con uno muy interesante y que se ajustaba perfectamente a lo que estábamos buscando. El mismo corresponde a un estudio realizado diariamente durante 10 año, en el cual se realizaron mediciones de la temperaturá mínima en la localidad de Melbourne, Australia.
 
 ![Melbourne, Australia](http://www.abc.net.au/news/image/8041730-16x9-940x529.jpg)
 
