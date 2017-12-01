@@ -66,7 +66,8 @@ Aparte la `precision` tambien es buena, porque obtuvimos casi 90% de acierto; lo
 `fp` es la cantidad de predicciones que hizo mal el modelo, es decir que es la cantidad de lo que el modelo predijo como spam y era legitimo.
 
 ### Conclusión
-Se pudo aplicar todo lo aprendido durante el curso en una aplicación real, que creemos que podría llegar a aportar valor a terceros. Los resultados obtenidos fueron bastante buenos, y no solo se logró brindar una solución al problema sino que también todos los objetivos que se plantearon al principio del proyecto fueron cumplidos.
+Fue interesante aplicar algoritmos de machine learning en conjunto con técnicas de procesamiento de lenguaje natural. Gracias a la gran cantidad de operadores que tiene Rapid Miner pudimos encontrar algunos de gran utilidad para el caso de estudio planteado. 
+A pesar de obtener un resultado positivo somos conscientes que la cantidad de instancias en el dataset son pocas y pudiendo aplicar este modelo a un dataset mas grande puede ajustarse mejor y tener como resultado un modelo utilizable en un entorno real.
 
 ![Captura App Web](https://raw.githubusercontent.com/chacaa/ML2017/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/webpage.png)
 Captura de la applicación que consume el servicio, código fuente de la misma en el siguiente [link](https://github.com/chacaa/ML2017/blob/master/Casos%20de%20estudio/Deteccion%20de%20SPAM/spamtest.html).
